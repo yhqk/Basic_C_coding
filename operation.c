@@ -11,15 +11,19 @@
   * In this case, PWD
   */
 
+#define MAX 10   /* constant will have compiling error */
+int array[MAX]; 
+
 int printEnvironment1(void){
   char *pwd = getenv("PWD"); 
   if(pwd){
-    printf("PWD is: %s", pwd); 
+    printf("\nPWD is: %s\n\n", pwd); 
     return 0; 
   }
   return -1; 
 }
 
+/* constant is often used as function arguement(s) */
 int printEnvironment2(char *env){
 
   /** 
@@ -27,7 +31,7 @@ int printEnvironment2(char *env){
    */
   char *some_env = getenv(env); 
   if(some_env){
-    printf("The value is:%s\n", env); 
+    printf("The value is:%s\n\n", env); 
     return 0; 
   }
   return -1; 
